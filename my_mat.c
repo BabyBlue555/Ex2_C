@@ -17,6 +17,20 @@ int set_mat(int mat[ROWS][COLUMNS]){
     }
 }
 
+int print_mat(int mat[ROWS][COLUMNS])
+{
+    int i,j;
+    for(i=0; i<ROWS; i++){
+            for(j=0; j<COLUMNS; j++){
+            printf("%d ", mat[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+    
+    return 1;
+}
+
 
 // function 2
 int is_there_path (int mat[ROWS][COLUMNS], int i, int j){
