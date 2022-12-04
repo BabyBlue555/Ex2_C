@@ -5,12 +5,12 @@ int main ()
 {
     
     int mat[ROWS][COLUMNS];
-    char user_input;
+    char user_input='0';
     int i,j;
 
   //  while (scanf("%c", &data) == 1){
     while(user_input != 'D'){
-        switch ((int) data)
+        switch ((int) user_input)
         {
             case (int) 'A':
                 set_mat(mat);
