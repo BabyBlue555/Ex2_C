@@ -1,10 +1,17 @@
 #include <stdio.h>
 #include "my_mat.h"
+#include <math.h>
+
+double fmin(double x, double y);
+
+
 int main(){
     int mat[ROWS][COLUMNS];
     char user_input= '0';
-    int i,j;
+   // int i,j=0;
     while(scanf(" %c",&user_input)==1){ // until the user quits
+          int i=0;
+          int j=0;
           switch ((int) user_input)
         {
             case (int) 'A':

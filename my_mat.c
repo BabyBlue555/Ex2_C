@@ -7,6 +7,9 @@
 #endif
 
 
+double fmin(double __x, double __y);
+
+
 int set_mat(int mat[ROWS][COLUMNS])
 {
     int i,j;
@@ -46,7 +49,7 @@ int is_there_path (int mat[ROWS][COLUMNS], int i, int j)
     return 1;
 }
 
-int minimal_path(int mat[ROWS][COLUMNS], int i, int j)
+int shortest_path(int mat[ROWS][COLUMNS], int i, int j)
 {
     if (mat[i][j]>0){
         printf("%d\n", mat[i][j]);
@@ -57,7 +60,9 @@ int minimal_path(int mat[ROWS][COLUMNS], int i, int j)
     return 1;
 }
 
-int get_minimal_path_matrix(int mat[ROWS][COLUMNS])
+
+//double fmin(double __x, double __y);
+int get_shortest_path_matrix(int mat[ROWS][COLUMNS])
 {
     // printf("ROWS: %d, COLUMNS: %d, UPDATES: %d\n", ROWS, COLUMNS, UPDATES);
     // print_mat(mat);
@@ -70,7 +75,11 @@ int get_minimal_path_matrix(int mat[ROWS][COLUMNS])
                         continue;
                     }
                     if(mat[i][j] > 0){
-                        mat[i][j] = fmin(mat[i][j], mat[i][k]+mat[k][j]);   
+                        double val1=(double)(mat[i][j]);
+                        double val2=(double)(mat[i][k]+mat[k][j]);
+                        int ans = (int)(fmin(val1, val2));   
+                        mat[i][j]=ans;
+                        //mat[i][j] = (int)fmin(3,4);   
                     }
                     else{
                         mat[i][j] = mat[i][k]+mat[k][j];    
