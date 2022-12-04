@@ -5,9 +5,11 @@ int main ()
 {
     
     int mat[ROWS][COLUMNS];
-    char data;
+    char user_input;
     int i,j;
-    while (scanf("%c", &data) == 1){
+
+  //  while (scanf("%c", &data) == 1){
+    while(user_input != 'D'){
         switch ((int) data)
         {
             case (int) 'A':
