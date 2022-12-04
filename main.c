@@ -30,6 +30,9 @@ int main ()
 
         scanf("%c", &user_input);
     }
+
+      return 0;
+}
     // while(user_input != 'D'){
     //     switch ((int) user_input)
     //     {
@@ -59,5 +62,5 @@ int main ()
     //             break;
     //     }
     // }
-  return 0;
-}
+//   return 0;
+// }
