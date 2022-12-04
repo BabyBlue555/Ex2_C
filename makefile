@@ -3,8 +3,8 @@ FLAGS= -Wall
 
 all: connections 
 
-connections: main.o libmy_mat.so
-	$(CC) $(FLAGS) main.o ./libmy_mat.so -o connections
+connections: main.o my_mat.so
+	$(CC) $(FLAGS) main.o ./my_mat.so -o connections
 
 main.o: main.c my_mat.h
 	$(CC) $(FLAGS) -c main.c
@@ -12,7 +12,7 @@ main.o: main.c my_mat.h
 ##valgrind:
 	##valgrind --leak-check=full ./connections
 	
-libmy_mat.so: my_mat.o
+my_mat.so: my_mat.o
 	$(CC) -shared -o libmy_mat.so my_mat.o -lm
 
 my_mat.o: my_mat.c my_mat.h
