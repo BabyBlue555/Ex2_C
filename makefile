@@ -9,8 +9,8 @@ connections: main.o libmy_mat.so
 main.o: main.c my_mat.h
 	$(CC) $(FLAGS) -c main.c
 	
-valgrind:
-	valgrind --leak-check=full ./connections
+##valgrind:
+	##valgrind --leak-check=full ./connections
 	
 libmy_mat.so: my_mat.o
 	$(CC) -shared -o libmy_mat.so my_mat.o -lm
@@ -19,7 +19,7 @@ my_mat.o: my_mat.c my_mat.h
 	$(CC) $(FLAGS) -c my_mat.c -lm
 
 
-.PHONY: clean all
-
+.PHONY: clean all 
+ 
 clean:
 	rm -f *.o *.so connections
