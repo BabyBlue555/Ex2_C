@@ -7,14 +7,16 @@
 #endif
 
 
-// function 1
-int set_mat(int mat[ROWS][COLUMNS]){
+int set_mat(int mat[ROWS][COLUMNS])
+{
     int i,j;
-    for(int i=0; i<ROWS; i++){
-        for(int j=0; j< COLUMNS; j++){
-            scaanf("%d", mat[i][j])
+    for(i=0; i<ROWS; i++){
+        for(j=0; j<COLUMNS; j++){
+            scanf("%d", &mat[i][j]);
         }
     }
+    
+    return 1;
 }
 
 int print_mat(int mat[ROWS][COLUMNS])
@@ -31,10 +33,9 @@ int print_mat(int mat[ROWS][COLUMNS])
     return 1;
 }
 
-
-// function 2
-int is_there_path (int mat[ROWS][COLUMNS], int i, int j){
-     if (mat[i][j] > 0)
+int is_there_path (int mat[ROWS][COLUMNS], int i, int j)
+{
+  if (mat[i][j] > 0)
     {
       printf ("True\n");
     }
@@ -43,22 +44,20 @@ int is_there_path (int mat[ROWS][COLUMNS], int i, int j){
       printf ("False\n");
     }
     return 1;
-
 }
 
-// function 3
-int shortest_path(int mat[ROWS][COLUMNS], int i, int j){
+int minimal_path(int mat[ROWS][COLUMNS], int i, int j)
+{
     if (mat[i][j]>0){
-            printf("%d\n", mat[i][j]);
+        printf("%d\n", mat[i][j]);
     }
     else{
         printf("-1\n");
     }
     return 1;
-    }
+}
 
-// calculate the values of the matrix according to the Floyd-Warshall algorythm, and by that , finds the shortest path for each pair
-int get_shortest_path_matrix(int mat[ROWS][COLUMNS])
+int get_minimal_path_matrix(int mat[ROWS][COLUMNS])
 {
     // printf("ROWS: %d, COLUMNS: %d, UPDATES: %d\n", ROWS, COLUMNS, UPDATES);
     // print_mat(mat);
@@ -83,10 +82,3 @@ int get_shortest_path_matrix(int mat[ROWS][COLUMNS])
     }
     return 1;
 }
-
-
-
-
-
-
-
