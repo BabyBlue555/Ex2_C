@@ -8,7 +8,7 @@ int main ()
     char user_input='0';
     int i,j;
 
-  //  while (scanf("%c", &data) == 1){
+    scanf("%c", &user_input);
     while(user_input != 'D'){
         switch ((int) user_input)
         {
