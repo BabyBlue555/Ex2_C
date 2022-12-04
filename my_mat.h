@@ -14,7 +14,11 @@
 #define FUNCS
 int set_mat(int mat[ROWS][COLUMNS]);
 int print_mat(int mat[ROWS][COLUMNS]);
-int is_there_path (int mat[ROWS][COLUMNS], int i, int j);
-int shortest_path(int mat[ROWS][COLUMNS], int i, int j);
+int is_there_path (int mat[ROWS][COLUMNS]);
+int shortest_path(int mat[ROWS][COLUMNS]);
+
+//int is_there_path (int mat[ROWS][COLUMNS], int i,int j);
+
+//int shortest_path(int mat[ROWS][COLUMNS], int i,int j);
 int get_shortest_path_matrix(int mat[ROWS][COLUMNS]);
 #endif
