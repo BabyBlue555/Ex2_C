@@ -1,25 +1,20 @@
 CC=gcc
-FLAGS= -Wall
+FLAGS= -Wall -g
 
 all: connections 
 
-connections: main.o my_mat.so
-	$(CC) $(FLAGS) main.o ./my_mat.so -o connections
+connections: main.o my_mat.o
+	$(CC) $(FLAGS) -o connections main.o my_mat.o 
 
 main.o: main.c my_mat.h
 	$(CC) $(FLAGS) -c main.c
 	
-##valgrind:
-	##valgrind --leak-check=full ./connections
-	
-my_mat.so: my_mat.o
-	$(CC) -shared -o libmy_mat.so my_mat.o -lm
-
 my_mat.o: my_mat.c my_mat.h
-	$(CC) $(FLAGS) -c my_mat.c -lm
-
-
+	$(CC) $(FLAGS) -c my_mat.c 
+	
 .PHONY: clean all 
  
 clean:
 	rm -f *.o *.so connections
+	
+
