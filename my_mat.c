@@ -12,13 +12,13 @@ double fmin(double __x, double __y);
 
 int set_mat(int mat[ROWS][COLUMNS])
 {
-    int i,j=0;
+    int i,j;
     for(i=0; i<ROWS; i++){
         for(j=0; j<COLUMNS; j++){
+            printf("hello");
             scanf("%d", &mat[i][j]);
         }
     }
-
     
     return 1;
 }
@@ -37,10 +37,10 @@ int print_mat(int mat[ROWS][COLUMNS])
     return 1;
 }
 
-int is_there_path (int mat[ROWS][COLUMNS])
+int is_there_path (int mat[ROWS][COLUMNS],int i,int j)
 {
-  int i,j;
-  scanf("%d%d", &i, &j);
+ // int i,j;
+  //scanf("%d%d", &i, &j);
   if (mat[i][j] > 0)
     {
       printf ("True\n");
@@ -52,10 +52,10 @@ int is_there_path (int mat[ROWS][COLUMNS])
     return 1;
 }
 
-int shortest_path(int mat[ROWS][COLUMNS])
+int shortest_path(int mat[ROWS][COLUMNS],int i,int j)
 {
-    int i,j;
-    scanf("%d%d", &i, &j);
+   // int i,j;
+   // scanf("%d%d", &i, &j);
     if (mat[i][j]>0){
         printf("%d\n", mat[i][j]);
     }
@@ -72,7 +72,7 @@ int get_shortest_path_matrix(int mat[ROWS][COLUMNS])
     // printf("ROWS: %d, COLUMNS: %d, UPDATES: %d\n", ROWS, COLUMNS, UPDATES);
     // print_mat(mat);
     int k, i, j;
-    scanf("%d%d", &i, &j);
+   // scanf("%d%d", &i, &j);
     for(k=0; k<UPDATES; k++){
         for(i=0; i<ROWS; i++){
             for(j=0; j<COLUMNS; j++){
@@ -93,7 +93,7 @@ int get_shortest_path_matrix(int mat[ROWS][COLUMNS])
                 }
             }
         } 
-        // print_mat(mat);
+        //print_mat(mat);
     }
-    return 1;
+   return 1;
 }
